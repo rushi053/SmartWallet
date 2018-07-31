@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import SignOutButton from "../SignOut/index";
 import * as routes from "../../constants/routes";
-
+import Background from '../../assets/images/1.jpg';
 const NavigationAuth = props => {
     const burgerToggle = () => {
         let linksEl = document.querySelector(".narrowLinks");
@@ -27,12 +27,14 @@ const NavigationAuth = props => {
     const daymode = { background: "#f8f9fa", color: "gray" };
     const dayModeLink = { color: "gray" };
     const nightModeLink = { background: "#00252C", color: "#F4D680" };
-    const mode = {background: "#1997c3", color: "white"};
+    const mode = {backgroundImage: `url(${Background})`, color: "white"};
     return (
         <nav style={mode}>
             <div className="navWide">
                 <ul className="navbar-nav">
-                    <h2 className="navbar-brand">Smart Wallet</h2>
+                    <h2 className="navbar-brand">
+                      <img height="50px"  src="https://cdn.discordapp.com/attachments/467078171758690324/473623813137891328/SMARTWALLETwhite.png"  />
+                    </h2>
                 </ul>
                 <div className="wideDiv">
                     <Link
@@ -62,14 +64,14 @@ const NavigationAuth = props => {
                         to={routes.FILTER_VIEW}
                         style={dayModeLink}
                     >
-                        filter
+                        Filter
                     </Link>
                     <Link
                         className={`nav-link ${window.location.pathname === "/statistics" ? "active" : "inactive"}`}
                         to={routes.STATISTICS_VIEW}
                         style={dayModeLink}
                     >
-                        Stats
+                        Statistics
                     </Link>
                     <Link
                       className={`nav-link ${window.location.pathname === "/account" ? "active" : "inactive"}`}
@@ -127,7 +129,7 @@ const NavigationAuth = props => {
                         onClick={burgerToggle}
                         style={dayModeLink}
                     >
-                        filter
+                        Filter
                     </Link>
                     <Link
                         className={`nav-link ${window.location.pathname === "/statistics" ? "active" : "inactive"}`}
@@ -135,7 +137,7 @@ const NavigationAuth = props => {
                         onClick={burgerToggle}
                         style={dayModeLink}
                     >
-                        Stats
+                        Statictics
                     </Link>
                     <Link
                       className={`nav-link ${window.location.pathname === "/account" ? "active" : "inactive"}`}
@@ -164,9 +166,9 @@ const NavigationNonAuth = () => {
             linksEl.style.display = "block";
         }
     };
-
+const mode1 = {backgroundImage: `url(${Background})`, color: "white"};
     return (
-        <nav>
+        <nav style={mode1}>
             <div className="navWide">
                 <ul className="navbar-nav">
                     <h2 className="navbar-brand">Smart Wallet</h2>

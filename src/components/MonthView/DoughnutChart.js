@@ -37,7 +37,7 @@ const DoughnutChart = (props) => {
                     fontSize: 15
                 },
                 display: true,
-                position: 'top',
+                position: 'left',
                 fullWidth: true,
                 reverse: false,
             }

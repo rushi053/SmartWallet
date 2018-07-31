@@ -70,7 +70,7 @@ const Cards = props => {
                     <div className="card-block">
                         <h3 className="card-title">Overall Spent</h3>
                         <p className="card-text">
-                            <i className="fa fa-inr" aria-hidden="true" /> {totalExpenses}
+                            <i className="fa fa-usd" aria-hidden="true" /> {totalExpenses}
                         </p>
                     </div>
                 </div>
@@ -80,7 +80,7 @@ const Cards = props => {
                     <div className="card-block">
                         <h3 className="card-title">This Month</h3>
                         <p className="card-text">
-                            <i className="fa fa-inr" aria-hidden="true" /> {totalExpensesThisMonth}
+                            <i className="fa fa-usd" aria-hidden="true" /> {totalExpensesThisMonth}
                         </p>
                     </div>
                 </div>
@@ -90,7 +90,7 @@ const Cards = props => {
                     <div className="card-block">
                         <h3 className="card-title">This Week</h3>
                         <p className="card-text">
-                            <i className="fa fa-inr" aria-hidden="true" /> {totalExpensesThisWeek}
+                            <i className="fa fa-usd" aria-hidden="true" /> {totalExpensesThisWeek}
                         </p>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ const Cards = props => {
                     <div className="card-block">
                         <h3 className="card-title">Today</h3>
                         <p className="card-text">
-                            <i className="fa fa-inr" aria-hidden="true" /> {totalExpensesToday}
+                            <i className="fa fa-usd" aria-hidden="true" /> {totalExpensesToday}
                         </p>
                     </div>
                 </div>

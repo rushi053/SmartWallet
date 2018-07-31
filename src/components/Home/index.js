@@ -34,9 +34,8 @@ class HomePage extends Component {
             return (
                 <div>
                     <div className="col-sm-12" style={styleFromSettings}>
-
-                    <img className="addexpense-btn" height="50px"  onClick={this.togglePopup.bind(this)} id="addExpense" src="http://www.iconhot.com/icon/png/bunch-cool-bluish-icons/256/add-20.png"  />
-                    
+                    <Cards expenses={this.props.expenses} authUser={this.props.user} />
+                    <img className="addexpense-btn" height="50px"  onClick={this.togglePopup.bind(this)} id="addExpense" src="http://www.free-icons-download.net/images/dollar-icon-44887.png"  />
                     <br /><br /><br />
                         <ExpenseTable
                             expenses={this.props.expenses}

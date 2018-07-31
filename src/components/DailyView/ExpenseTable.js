@@ -2,15 +2,15 @@ import React from "react";
 import Expense from "./Expense";
 
 import "../../assets/css/table.css";
-
+import Background from '../../assets/images/2.jpg';
 const ExpenseTable = props => {
-    const nightMode = { background: props.settings ? (props.settings.mode === "night" ? "#212529" : "auto") : "auto" };
+  const nightMode = {   backgroundImage: `url(${Background})`};
 
     return (
         <table className="table table-striped table-bordered table-dark rwd-table expense-table" style={nightMode}>
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Sr.No.</th>
                     <th scope="col">Date</th>
                     <th scope="col">Expense</th>
                     <th scope="col">Category</th>

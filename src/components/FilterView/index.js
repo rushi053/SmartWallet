@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import DatePicker from "react-datepicker";
 import ExpenseTable from "./ExpenseTable.js";
-import TotalCard from "./TotalCard.js";
+import Background from '../../assets/images/1.jpg';
 import moment from "moment";
-import GenerateExcel from "./GenerateExcel";
+
 import Loader from "./../Common/Loader";
 
 class FilterViewPage extends Component {
@@ -50,11 +50,11 @@ class FilterViewPage extends Component {
 
     render() {
         const datePickerHeader = {
-            background: "#887657",
-            color: "#fff",
-            padding: "15px",
-            margin: "0 0 15px 0",
-            borderRadius: "5px"
+          background: "#2e94c7",
+          color: "#fff",
+          padding: "15px",
+          margin: "0 0 15px 0",
+          borderRadius: "5px"
         };
 
         const leftCol = {
@@ -71,16 +71,12 @@ class FilterViewPage extends Component {
 
         const styleFromSettings = {
             fontFamily: this.props.settings ? this.props.settings.font : "sans-serif",
-            backgroundColor: this.props.settings
-                ? this.props.settings.mode === "night"
-                    ? "#484842"
-                    : "#EDF0EF"
-                : "#EDF0EF",
+              backgroundImage: `url(${Background})`,
             minHeight: "91vh"
         };
 
         const white = {
-            color: this.props.settings ? (this.props.settings.mode === "night" ? "#fff" : "#000") : "#000"
+            color: "#fff"
         };
 
         const inputNightMode = {
@@ -202,27 +198,10 @@ class FilterViewPage extends Component {
                                     </div>
                                 </div>
                             </form>
-                            <TotalCard
-                                expenses={this.props.expenses}
-                                expensefrom={this.state.expensefrom}
-                                expenseto={this.state.expenseto}
-                                fromdate={this.state.fromdate.format("MM/DD/YYYY")}
-                                todate={this.state.todate.format("MM/DD/YYYY")}
-                                category={this.state.category}
-                                authUser={this.props.user}
-                            />
+
                         </div>
                         <div className="col-sm-8">
-                            <GenerateExcel
-                                expenses={this.props.expenses}
-                                expensefrom={this.state.expensefrom}
-                                expenseto={this.state.expenseto}
-                                fromdate={this.state.fromdate.format("MM/DD/YYYY")}
-                                todate={this.state.todate.format("MM/DD/YYYY")}
-                                category={this.state.category}
-                                authUser={this.props.user}
-                                settings={this.props.settings}
-                            />
+
                             <ExpenseTable
                                 expenses={this.props.expenses}
                                 expensefrom={this.state.expensefrom}

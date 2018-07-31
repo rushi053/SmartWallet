@@ -42,7 +42,7 @@ const TotalCard = props => {
                         Total Money Spent <i className="fa fa-money float-right" />
                     </h3>
                     <p className="card-text">
-                        <i className="fa fa-inr" aria-hidden="true" /> {totalExpenses}
+                        <i className="fa fa-usd" aria-hidden="true" /> {totalExpenses}
                     </p>
                 </div>
             </div>

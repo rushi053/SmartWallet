@@ -5,11 +5,11 @@ import moment from "moment";
 
 import ExpenseTable from "./ExpenseTable.js";
 import TotalCard from "./TotalCard";
-import CategoryTotalCard from "./CategoryTotalCard";
-import DoughnutChart from "./DoughnutChart";
-import GenerateExcel from "./GenerateExcel";
-import Loader from "./../Common/Loader";
 
+import DoughnutChart from "./DoughnutChart";
+
+import Loader from "./../Common/Loader";
+import Background from '../../assets/images/1.jpg';
 class DailyViewPage extends Component {
     constructor(props) {
         super(props);
@@ -27,7 +27,7 @@ class DailyViewPage extends Component {
 
     render() {
         const datePickerHeader = {
-            background: "#887657",
+            background: "#2e94c7",
             color: "#fff",
             padding: "15px",
             margin: "0 0 15px 0",
@@ -48,11 +48,7 @@ class DailyViewPage extends Component {
 
         const styleFromSettings = {
             fontFamily: this.props.settings ? this.props.settings.font : "sans-serif",
-            backgroundColor: this.props.settings
-                ? this.props.settings.mode === "night"
-                    ? "#484842"
-                    : "#EDF0EF"
-                : "#EDF0EF",
+            backgroundImage: `url(${Background})`,
             minHeight: "91vh"
         };
 
@@ -67,16 +63,35 @@ class DailyViewPage extends Component {
         };
 
         const white = {
-            color: this.props.settings ? (this.props.settings.mode === "night" ? "#fff" : "#000") : "#000"
+            color: "#fff"
         };
 
         if (this.props.settings) {
             return (
                 <div className="container-fluid" style={styleFromSettings}>
                     <div className="row">
+                    <div className="col-sm-8">
+                        <div
+                            className="col-sm-12"
+                            style={this.props.settings.mode === "night" ? nmBgForCharts : pad15}
+                        >
+                            <DoughnutChart
+                                expenses={this.props.expenses}
+                                date={this.state.date.format("MM/DD/YYYY")}
+                                authUser={this.props.user}
+                            />
+                        </div>
+
+                        <ExpenseTable
+                            expenses={this.props.expenses}
+                            date={this.state.date.format("MM/DD/YYYY")}
+                            authUser={this.props.user}
+                            settings={this.props.settings}
+                        />
+                    </div>
                         <div className="col-sm-4" style={leftCol}>
                             <form onSubmit={this.handleSubmit} style={form}>
-                                <div style={datePickerHeader}> View your expenses on a particular date </div>
+                                <div style={datePickerHeader}> View your spendings on a particular date </div>
                                 <div className="form-group row">
                                     <label className="col-2 col-form-label" style={white}>
                                         <span>Date</span>
@@ -101,36 +116,9 @@ class DailyViewPage extends Component {
                                 date={this.state.date.format("MM/DD/YYYY")}
                                 authUser={this.props.user}
                             />
-                            <CategoryTotalCard
-                                expenses={this.props.expenses}
-                                date={this.state.date.format("MM/DD/YYYY")}
-                                authUser={this.props.user}
-                            />
+
                         </div>
-                        <div className="col-sm-8">
-                            <div
-                                className="col-sm-12"
-                                style={this.props.settings.mode === "night" ? nmBgForCharts : pad15}
-                            >
-                                <DoughnutChart
-                                    expenses={this.props.expenses}
-                                    date={this.state.date.format("MM/DD/YYYY")}
-                                    authUser={this.props.user}
-                                />
-                            </div>
-                            <GenerateExcel
-                                expenses={this.props.expenses}
-                                date={this.state.date.format("MM/DD/YYYY")}
-                                authUser={this.props.user}
-                                settings={this.props.settings}
-                            />
-                            <ExpenseTable
-                                expenses={this.props.expenses}
-                                date={this.state.date.format("MM/DD/YYYY")}
-                                authUser={this.props.user}
-                                settings={this.props.settings}
-                            />
-                        </div>
+
                     </div>
                 </div>
             );

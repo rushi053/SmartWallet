@@ -31,8 +31,12 @@ const DoughnutChart = (props) => {
 
         const options = {
             legend : {
+                labels: {
+                    fontColor: "white",
+                    fontSize: 15
+                },
                 display: true,
-                position: 'top',
+                position: 'left',
                 fullWidth: true,
                 reverse: false,
             }
@@ -49,7 +53,7 @@ const DoughnutChart = (props) => {
                 <Doughnut data={data} options={window.screen.width > 720 ? options : optionsMobile} responsive={true} />
             </div>
         );
-    } 
+    }
 }
 
 export default DoughnutChart

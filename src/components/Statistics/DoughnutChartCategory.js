@@ -36,8 +36,12 @@ const DoughnutChartCategory = props => {
 
         const options = {
             legend: {
+              labels: {
+                  fontColor: "white",
+                  fontSize: 15
+              },
                 display: true,
-                position: "top",
+                position: "right",
                 fullWidth: true,
                 reverse: false
             }

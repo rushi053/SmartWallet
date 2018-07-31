@@ -17,10 +17,11 @@ const BarChartAllMonths = (props) => {
 
         let data = {
             labels: ["JAN","FEB","MAR","APR","MAY","JUNE","JULY","AUG","SEP","OCT","NOV","DEC"],
+
             datasets: [{
                 data: allMonthsTotals,
-                backgroundColor: 'rgba(66,133,234,0.8)',
-                borderColor: 'rgba(66,133,234,1)',
+                backgroundColor: 'rgba(26, 191, 43, 1)',
+                borderColor: 'rgba(26, 191, 43, 1)',
                 borderWidth: 2,
                 hoverBackgroundColor: 'rgba(66,133,234,0.6)',
                 hoverBorderColor: 'rgba(66,133,234,1)',
@@ -29,7 +30,7 @@ const BarChartAllMonths = (props) => {
 
         const options = {
             legend: {
-                display: false,
+                display: false
             }
         }
 

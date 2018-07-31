@@ -2,9 +2,9 @@ import React from "react";
 import Expense from "./Expense";
 
 import "../../assets/css/table.css";
-
+import Background from '../../assets/images/2.jpg';
 const ExpenseTable = props => {
-    const nightMode = { background: "#212529" };
+    const nightMode = { backgroundImage: `url(${Background})` };
 
     return (
       <div className="row">
